@@ -1,6 +1,6 @@
 app-id: io.jor.mightymike
 runtime: org.freedesktop.Platform
-runtime-version: "21.08"
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: MightyMike
 rename-icon: mightymike-desktopicon
@@ -17,8 +17,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/jorio/MightyMike.git
-        tag: v3.0.0
-        commit: 9cf1ea12671edcc0e7b62fc01d07e6f884d29e95
+        tag: v3.0.1
+        commit: 704ed5232081912d11b18edf423ca7823a98dd82
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
