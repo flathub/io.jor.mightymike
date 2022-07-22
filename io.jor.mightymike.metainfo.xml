@@ -24,57 +24,41 @@
   
   <screenshots>
     <screenshot type="default">
-      <image>https://github.com/jorio/MightyMike/raw/master/docs/screenshot.png</image>
+      <image>https://img.itch.zone/aW1hZ2UvMTU2ODMxNS85MTc4MzE2LnBuZw==/original/SWkFan.png</image>
     </screenshot>
     <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike10.jpg</image>
+      <image>https://img.itch.zone/aW1hZ2UvMTU2ODMxNS85MTc4MzIyLnBuZw==/original/w8bg8e.png</image>
     </screenshot>
     <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike11.jpg</image>
+      <image>https://img.itch.zone/aW1hZ2UvMTU2ODMxNS85MTc4NTg5LnBuZw==/original/uxJlcX.png</image>
     </screenshot>
     <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike12.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike13.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike14.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike16.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike17.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike18.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike3.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike4.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike5.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike8.jpg</image>
-    </screenshot>
-    <screenshot>
-      <image>https://pangeasoft.net/mightymike/files/screenshots/mike9.jpg</image>
+      <image>https://img.itch.zone/aW1hZ2UvMTU2ODMxNS85MTc4NzE3LnBuZw==/original/kI6scC.png</image>
     </screenshot>
   </screenshots>
   
-  <url type="homepage">https://github.com/jorio/MightyMike</url>
+  <url type="homepage">https://jorio.itch.io/mightymike</url>
+  <url type="donation">https://ko-fi.com/jorio</url>
   <url type="bugtracker">https://github.com/jorio/MightyMike/issues</url>
-  
+
   <provides>
     <id>io.jor.mightymike.desktop</id>
   </provides>
   
   <releases>
+    <release version="3.0.1" date="2022-04-26">
+      <url>https://github.com/jorio/MightyMike/releases/tag/v3.0.0</url>
+      <description>
+        <ul>
+          <li>Color correction setting (Contributed by Eric Lasota, thanks!)</li>
+          <li>Fixed rare crash when enemy gets close to playfield boundaries.</li>
+          <li>Fixed incorrect weapon firing rate in fixed-framerate mode.</li>
+          <li>Fixed window going black when smaller than 640x480 with pixel-perfect upscaling.</li>
+          <li>Added maximum windowed zoom setting.</li>
+          <li>Updated to SDL 2.0.22.</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.0.0" date="2021-04-11">
       <url>https://github.com/jorio/MightyMike/releases/tag/v3.0.0</url>
       <description>

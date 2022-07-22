@@ -17,8 +17,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/jorio/MightyMike.git
-        tag: v3.0.0
-        commit: 9cf1ea12671edcc0e7b62fc01d07e6f884d29e95
+        tag: v3.0.1
+        commit: 704ed5232081912d11b18edf423ca7823a98dd82
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -26,8 +26,6 @@ modules:
         path: mightymike_launcher.sh
       - type: file
         path: io.jor.mightymike.metainfo.xml
-      - type: file
-        path: io.jor.mightymike.desktop
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     no-make-install: true
@@ -36,6 +34,6 @@ modules:
       - mkdir -p ${FLATPAK_DEST}/mightymike
       - install -D ${FLATPAK_BUILDER_BUILDDIR}/MightyMike ${FLATPAK_DEST}/mightymike/MightyMike
       - cp -r ./Data ${FLATPAK_DEST}/mightymike
-      - install -D ./io.jor.mightymike.desktop ${FLATPAK_DEST}/share/applications/io.jor.mightymike.desktop
-      - install -D ./cmake/MightyMike512.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/mightymike-desktopicon.png
+      - install -D ./packaging/mightymike.desktop ${FLATPAK_DEST}/share/applications/io.jor.mightymike.desktop
+      - install -D ./packaging/MightyMike512.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/mightymike-desktopicon.png
       - install -D ./io.jor.mightymike.metainfo.xml ${FLATPAK_DEST}/share/metainfo/io.jor.mightymike.metainfo.xml
