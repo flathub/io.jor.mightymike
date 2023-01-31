@@ -46,6 +46,7 @@
   </provides>
   
   <releases>
+    <release version="3.0.2" date="2023-01-31"/>
     <release version="3.0.1" date="2022-04-26">
       <url>https://github.com/jorio/MightyMike/releases/tag/v3.0.0</url>
       <description>
