@@ -1,9 +1,8 @@
 app-id: io.jor.mightymike
 runtime: org.freedesktop.Platform
-runtime-version: "21.08"
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
 command: MightyMike
-rename-icon: mightymike-desktopicon
 
 finish-args:
   - --socket=x11
@@ -17,23 +16,21 @@ modules:
     sources:
       - type: git
         url: https://github.com/jorio/MightyMike.git
-        tag: v3.0.1
-        commit: 704ed5232081912d11b18edf423ca7823a98dd82
+        #tag: v3.0.2 # TODO: Uncomment this for next release. For now, can't use tag 'v3.0.2' because it lacks AppStream stuff.
+        commit: a7dd7522d028a72ca44e33f07344e0d9dd7a53bb
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
       - type: file
         path: mightymike_launcher.sh
-      - type: file
-        path: io.jor.mightymike.metainfo.xml
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     no-make-install: true
     build-commands:
       - install -D mightymike_launcher.sh ${FLATPAK_DEST}/bin/MightyMike
       - mkdir -p ${FLATPAK_DEST}/mightymike
-      - install -D ${FLATPAK_BUILDER_BUILDDIR}/MightyMike ${FLATPAK_DEST}/mightymike/MightyMike
       - cp -r ./Data ${FLATPAK_DEST}/mightymike
-      - install -D ./packaging/mightymike.desktop ${FLATPAK_DEST}/share/applications/io.jor.mightymike.desktop
-      - install -D ./packaging/MightyMike512.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/mightymike-desktopicon.png
-      - install -D ./io.jor.mightymike.metainfo.xml ${FLATPAK_DEST}/share/metainfo/io.jor.mightymike.metainfo.xml
+      - install -D ${FLATPAK_BUILDER_BUILDDIR}/MightyMike       ${FLATPAK_DEST}/mightymike/MightyMike
+      - install -D ./packaging/io.jor.mightymike.desktop        ${FLATPAK_DEST}/share/applications/io.jor.mightymike.desktop
+      - install -D ./packaging/io.jor.mightymike.png            ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/io.jor.mightymike.png
+      - install -D ./packaging/io.jor.mightymike.appdata.xml    ${FLATPAK_DEST}/share/metainfo/io.jor.mightymike.appdata.xml
