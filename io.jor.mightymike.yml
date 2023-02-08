@@ -1,6 +1,6 @@
 app-id: io.jor.mightymike
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: MightyMike
 
@@ -28,9 +28,10 @@ modules:
       - type: git
         url: https://github.com/jorio/MightyMike.git
         #tag: v3.0.2 # TODO: Uncomment this for next release. For now, can't use tag 'v3.0.2' because it lacks AppStream stuff.
-        commit: 972165028c86bc8c69d446c659399e228e71d8c5
+        commit: 5337fc269afafec0c1571437f33f556fc0a4b264
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+        tag: v3.0.2
       - type: file
         path: mightymike_launcher.sh
