@@ -8,30 +8,30 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --socket=pulseaudio
-  - --device=dri
+  - --device=all  # I wish I could set "dri" only, but gamepads won't work without "all"
   - --share=ipc
 
 modules:
   - name: mightymike
-    buildsystem: cmake
-    sources:
-      - type: git
-        url: https://github.com/jorio/MightyMike.git
-        #tag: v3.0.2 # TODO: Uncomment this for next release. For now, can't use tag 'v3.0.2' because it lacks AppStream stuff.
-        commit: a7dd7522d028a72ca44e33f07344e0d9dd7a53bb
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
-      - type: file
-        path: mightymike_launcher.sh
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     no-make-install: true
-    build-commands:
-      - install -D mightymike_launcher.sh ${FLATPAK_DEST}/bin/MightyMike
+    post-install:
+      - install -Dm755 mightymike_launcher.sh ${FLATPAK_DEST}/bin/MightyMike
       - mkdir -p ${FLATPAK_DEST}/mightymike
       - cp -r ./Data ${FLATPAK_DEST}/mightymike
       - install -D ${FLATPAK_BUILDER_BUILDDIR}/MightyMike       ${FLATPAK_DEST}/mightymike/MightyMike
       - install -D ./packaging/io.jor.mightymike.desktop        ${FLATPAK_DEST}/share/applications/io.jor.mightymike.desktop
       - install -D ./packaging/io.jor.mightymike.png            ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/io.jor.mightymike.png
       - install -D ./packaging/io.jor.mightymike.appdata.xml    ${FLATPAK_DEST}/share/metainfo/io.jor.mightymike.appdata.xml
+    sources:
+      - type: git
+        url: https://github.com/jorio/MightyMike.git
+        #tag: v3.0.2 # TODO: Uncomment this for next release. For now, can't use tag 'v3.0.2' because it lacks AppStream stuff.
+        commit: 972165028c86bc8c69d446c659399e228e71d8c5
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+      - type: file
+        path: mightymike_launcher.sh
