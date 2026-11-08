@@ -28,8 +28,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/jorio/MightyMike.git
+        tag: v3.0.2
         #tag: v3.0.2 # TODO: Uncomment this for next release. For now, can't use tag 'v3.0.2' because it lacks AppStream stuff.
-        commit: 2be8fc9e924135dffbc6f43e035c5459434f4a36
+        commit: 5337fc269afafec0c1571437f33f556fc0a4b264
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
